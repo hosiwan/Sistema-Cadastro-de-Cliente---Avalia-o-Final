@@ -12,23 +12,7 @@
 */
 
 Route::get('/produtos', function () {
-
-	$produtos = [
-		[
-			'id' => 1,
-			'nome' => 'Arroz',
-			'descricao' => 'Arroz tio joão',
-			'preco' => 5.00,
-			'quantidade' => 5
-		],
-		[
-			'id' => 2,
-			'nome' => 'Feijão',
-			'descricao' => 'Feijão tio joão',
-			'preco' => 1.00,
-			'quantidade' => 1
-		]
-	];
+	$produtos = \App\Produto::all();
 
 	return view('produtos.lista-produtos', [
 		'produtos' => $produtos
@@ -37,7 +21,19 @@ Route::get('/produtos', function () {
 });
 
 Route::get('/produtos/criar-produto', function () {
-	echo "Criar produto";
+	return view('produtos.criar-produtos');
+});
+
+use \Illuminate\Http\Request;
+
+Route::post('/produtos/criar-produto', function () {
+	$produto = new App\Produto();
+
+	$produto->nome = Request::get('nome');
+	$produto->descricao = Request::get('descricao');
+	$produto->preco = Request::get('preco');
+	$produto->quantidade = Request::get('quantidade');
+	$produto->save();
 });
 
 Route::get('/', function () {

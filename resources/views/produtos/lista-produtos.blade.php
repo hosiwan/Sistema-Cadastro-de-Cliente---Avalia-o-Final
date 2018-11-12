@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('conteudo-principal')
+<a href="/produtos/criar-produto">Criar Produto</a>
 <table>
 		<thead>
 			<tr>

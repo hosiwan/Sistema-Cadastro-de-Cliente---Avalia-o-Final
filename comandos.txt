@@ -1,0 +1,17 @@
+https://github.com/ptsilva/aula-laravel
+
+composer update
+cp .env.example .env
+php artisan key:generate
+
+php artisan serve
+
+
+https://laravel.com/docs/5.7/migrations
+
+php artisan make:migration create_table_produtos
+
+php artisan migrate // CRIA
+php artisan migrate:reset // DESTROI
+php artisan migrate:refresh // DESTROI E CRIA
+
