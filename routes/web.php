@@ -11,30 +11,16 @@
 |
 */
 
-Route::get('/produtos', function () {
-	$produtos = \App\Produto::all();
+Route::get('/produtos', 'ProdutosController@listar');
 
-	return view('produtos.lista-produtos', [
-		'produtos' => $produtos
-	]);
+Route::get('/produtos/criar-produto', 'ProdutosController@formulario_criar');
 
-});
 
-Route::get('/produtos/criar-produto', function () {
-	return view('produtos.criar-produtos');
-});
+Route::post('/produtos/criar-produto', 'ProdutosController@criar_produto');
 
-use \Illuminate\Http\Request;
 
-Route::post('/produtos/criar-produto', function () {
-	$produto = new App\Produto();
+Route::get('/produtos/{id}/editar', 'ProdutosController@editar');
 
-	$produto->nome = Request::get('nome');
-	$produto->descricao = Request::get('descricao');
-	$produto->preco = Request::get('preco');
-	$produto->quantidade = Request::get('quantidade');
-	$produto->save();
-});
 
 Route::get('/', function () {
     return view('welcome');
