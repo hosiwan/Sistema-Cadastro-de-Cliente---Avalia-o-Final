@@ -1,23 +1,24 @@
 @extends('layout')
 
 @section('conteudo-principal')
+	{{ $errors }}
 <form method="POST" action="/produtos/criar-produto">
 	{!! csrf_field() !!}
 	<div>
 		<label>Nome</label>
-		<input type="text" name="nome">
+		<input value="{{ old('nome') }}" type="text" required name="nome">
 	</div>
 	<div>
 		<label>Descrição</label>
-		<input type="text" name="descricao">
+		<input value="{{ old('descricao') }}" type="text" required name="descricao">
 	</div>
 	<div>
 		<label>Preço</label>
-		<input type="text" name="preco">
+		<input value="{{ old('preco') }}" type="text" required name="preco">
 	</div>
 	<div>
 		<label>Quantidade</label>
-		<input type="text" name="quantidade">
+		<input value="{{ old('quantidade') }}" type="text" required name="quantidade">
 	</div>
 	<button type="submit">Criar Produto</button>
 </form>

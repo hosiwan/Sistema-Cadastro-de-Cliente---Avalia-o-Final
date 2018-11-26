@@ -2,20 +2,20 @@
 
 @section('conteudo-principal')
 <div>
-	<a href="/produtos/criar-produto">Criar Produto</a>
+	<a class="btn btn-success" href="/produtos/criar-produto">Criar Produto</a>
 </div>
 <div>
 	<form method="GET" action="/produtos">
 		<input type="text" value="{{ $busca }}" name="busca"/>
-		<button type="submit">Pesquisar</button>
+		<button class="btn btn-default" type="submit">Pesquisar</button>
 		@if($busca)
-			<a href="/produtos">Limpar Busca</a>
+			<a class="btn btn-default" href="/produtos">Limpar Busca</a>
 		@endif
 	</form>
 
 </div>
 @if(count($produtos))
-	<table>
+	<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -44,7 +44,7 @@
 						</td>
 						<td>
 							<a href="/produtos/{{ $produto['id']}}/editar">Editar</a>
-							<button>Deletar</button>
+							<a href="/produtos/{{ $produto['id'] }}/deletar">Deletar</button>
 						</td>
 					</tr>
 				@endforeach

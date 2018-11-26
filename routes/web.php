@@ -18,6 +18,9 @@ Route::get('/produtos/criar-produto', 'ProdutosController@formulario_criar');
 
 Route::post('/produtos/criar-produto', 'ProdutosController@criar_produto');
 
+Route::get('/produtos/{id}/deletar', 'ProdutosController@deletar');
+
+Route::post('/produtos/{id}/editar', 'ProdutosController@alterar');
 
 Route::get('/produtos/{id}/editar', 'ProdutosController@editar');
 

@@ -2,14 +2,14 @@
 <html>
 <head>
 	<title>Sistema de Estoque</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-4.1.3-dist/css/bootstrap.css">
 </head>
 <body>
-	<h1>Sistema de Estoque</h1>
+	@include('cabecalho')
 
-	@section('conteudo-principal')
-	Bem vindo
-	@show
+	@yield("conteudo-principal")
 
-	<h3>Todos os direitos reservados</h3>
+	@include('rodape')
 </body>
+<script type="text/javascript" src="/css/bootstrap-4.1.3-dist/js/bootstrap.js"></script>
 </html>
