@@ -11,20 +11,20 @@
 |
 */
 
-Route::get('/produtos', 'ProdutosController@listar');
 
-Route::get('/produtos/criar-produto', 'ProdutosController@formulario_criar');
+Route::get('/clientes/', 'ClientesController@listar');
 
+Route::get('/clientes/criar-cliente', 'ClientesController@formulario_criar');
 
-Route::post('/produtos/criar-produto', 'ProdutosController@criar_produto');
+Route::post('/clientes/criar-cliente', 'ClientesController@criar_cliente');
 
-Route::get('/produtos/{id}/deletar', 'ProdutosController@deletar');
+Route::get('/clientes/{id}/deletar', 'ClientesController@deletar');
 
-Route::post('/produtos/{id}/editar', 'ProdutosController@alterar');
+Route::post('/clientes/{id}/editar', 'ClientesController@alterar');
 
-Route::get('/produtos/{id}/editar', 'ProdutosController@editar');
+Route::get('/clientes/{id}/editar', 'ClientesController@editar');
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bem-vindo');
 });

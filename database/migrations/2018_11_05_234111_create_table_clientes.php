@@ -16,10 +16,13 @@ class CreateTableClientes extends Migration
         Schema::create('clientes', function ($table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('cpf')->unique();
             $table->date('data_nascimento');
+            $table->string('estado_civil')->nullable();
+            $table->string('telefone')->nullable();
             $table->string('endereco')->nullable();
-            $table->text('observacoes')->nullable();
+            $table->text('usuario')->nullable();
+            $table->string('senha')->nullable();
+            $table->string('cpf')->unique();
             $table->timestamps();
         });
     }

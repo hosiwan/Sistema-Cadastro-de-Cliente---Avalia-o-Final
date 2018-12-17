@@ -1,1 +1,1 @@
-<h3>Todos os direitos reservados</h3>
+<h5 style="widows: 100%;text-align: center; font-family: verdana; margin-top: 100px"><i>Desenvolvido por Rosivan Santos e José Urbano</i></h1>

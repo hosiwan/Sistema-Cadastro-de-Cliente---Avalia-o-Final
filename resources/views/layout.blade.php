@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema de Estoque</title>
+	<title>Sistema de Cliente</title>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-4.1.3-dist/css/bootstrap.css">
 </head>
-<body>
+<body style="background-image: url(/img/bg.jpg); background-repeat: no-repeat; background-size: cover;">
 	@include('cabecalho')
 
 	@yield("conteudo-principal")
